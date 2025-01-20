@@ -2,6 +2,7 @@ package com.testng.TestCases;
 
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import org.testng.annotations.AfterTest;
 
 import com.testng.Base.BaseClass;
 
@@ -14,13 +15,19 @@ public class TestCases {
 		base.launchChromeBrowser();
 	}
 	
-	@Test(priority = 0)
-	public void loginFlow() {
-		base.enterEmail();
-		base.enterPassword();
-		base.clickLoginBtn();
+	@Test(enabled=false)
+	public void registerAccount() {
+		base.registerPage();
+		base.personalDetails();
 	}
 	
+	@Test(priority = 0)
+	public void loginTest() {
+		base.loginPage();
+		base.login();
+	}
+	
+	@AfterTest
 	public void closeBrowser()
 	{
 		base.closeBrowser();

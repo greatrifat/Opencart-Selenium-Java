@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BaseClass {
@@ -15,7 +16,7 @@ public class BaseClass {
 		driver.manage().window().maximize();
 		
 		try {
-			driver.get("https://alokitofoundation.vercel.app/auth/signin");
+			driver.get("https://opencart.abstracta.us");
 			driver.manage().timeouts().implicitlyWait (Duration.ofSeconds(3));
 			
 		}catch(Exception e){
@@ -23,20 +24,53 @@ public class BaseClass {
 		}
 	}
 	
-	public void enterEmail()
+	public void registerPage()
 	{
-		driver.findElement(By.id("email")).sendKeys("greatrifat@gmail.com");
+		WebElement dropdown = driver.findElement(By.cssSelector("li.dropdown > a.dropdown-toggle"));
+	    dropdown.click(); 
+
+	    // Locate and click the "Register" button
+	    WebElement registerButton = driver.findElement(By.xpath("//a[contains(@href, 'account/register')]"));
+	    registerButton.click(); 
 	}
 	
-	public void enterPassword()
+	public void loginPage()
 	{
-		driver.findElement(By.id("password")).sendKeys("1234");
+		WebElement dropdown = driver.findElement(By.cssSelector("li.dropdown > a.dropdown-toggle"));
+	    dropdown.click(); 
+
+	    // Locate and click the "Register" button
+	    WebElement registerButton = driver.findElement(By.xpath("//a[contains(@href, 'account/login')]"));
+	    registerButton.click(); 
 	}
 	
-	public void clickLoginBtn()
+	
+	
+	public void personalDetails()
 	{
-		driver.findElement(By.xpath("//button[@type='submit']")).click();
+		driver.findElement(By.id("input-firstname")).sendKeys("Robayet");
+		driver.findElement(By.id("input-lastname")).sendKeys("Ahasan");
+		driver.findElement(By.id("input-email")).sendKeys("greatrifat@gmail.com");
+		driver.findElement(By.id("input-telephone")).sendKeys("01700000000");
+		driver.findElement(By.id("input-password")).sendKeys("GreatRifat@2");
+		driver.findElement(By.id("input-confirm")).sendKeys("GreatRifat@2");
+		
+		WebElement checkbox = driver.findElement(By.xpath("//input[@name='agree']"));
+		checkbox.click();
+		
+		WebElement continueBtn = driver.findElement(By.xpath("//input[@type='submit']"));
+		continueBtn.click();
 	}
+	
+	public void login()
+	{
+		driver.findElement(By.id("input-email")).sendKeys("greatrifat@gmail.com");
+		driver.findElement(By.id("input-password")).sendKeys("GreatRifat@2");
+		
+		WebElement loginBtn = driver.findElement(By.xpath("//input[@type='submit']"));
+		loginBtn.click();
+	}
+	
 	
 	public void closeBrowser()
 	{
