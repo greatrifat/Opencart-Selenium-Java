@@ -16,7 +16,7 @@ public class BaseClass {
 		driver.manage().window().maximize();
 		
 		try {
-			driver.get("https://opencart.abstracta.us");
+			driver.get("https://demo.opencart.com");
 			driver.manage().timeouts().implicitlyWait (Duration.ofSeconds(3));
 			
 		}catch(Exception e){

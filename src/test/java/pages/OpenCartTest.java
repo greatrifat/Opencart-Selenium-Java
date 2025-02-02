@@ -1,0 +1,57 @@
+package pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.*;
+import org.testng.Assert;
+
+import java.util.UUID;
+
+public class OpenCartTest {
+    private WebDriver driver;
+    private HomePage homePage;
+
+    @BeforeClass
+    public void setUp() {
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("http://opencart.abstracta.us");
+        homePage = new HomePage(driver);
+    }
+
+    @Test(priority = 1)
+    public void testUserRegistration() {
+        String randomEmail = "test_" + UUID.randomUUID().toString().substring(0, 8) + "@example.com";
+        
+        RegisterPage registerPage = homePage.navigateToRegisterPage();
+        registerPage.registerUser("Test", "User", randomEmail, "1234567890", "Test@123");
+        
+        Assert.assertEquals(registerPage.getSuccessMessage(), 
+                          "Your Account Has Been Created!");
+    }
+
+    @Test(priority = 2)
+    public void testProductSearch() {
+        SearchResultPage searchResultPage = homePage.searchProduct("iPhone");
+        Assert.assertTrue(searchResultPage.hasSearchResults(), 
+                        "No products found in search results");
+    }
+
+    @Test(priority = 3)
+    public void testAddToCart() {
+        SearchResultPage searchResultPage = homePage.searchProduct("MacBook");
+        searchResultPage.addFirstProductToCart();
+        
+        Assert.assertTrue(searchResultPage.getSuccessMessage()
+                        .contains("Success: You have added"));
+        Assert.assertTrue(searchResultPage.getCartTotal()
+                        .contains("1 item(s)"));
+    }
+
+    @AfterClass
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
+}

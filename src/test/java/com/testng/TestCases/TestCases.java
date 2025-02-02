@@ -19,7 +19,7 @@ public class TestCases {
 	public void registerAccount() {
 		base.registerPage();
 		base.personalDetails();
-	}
+	}  
 	
 	@Test(priority = 0)
 	public void loginTest() {
