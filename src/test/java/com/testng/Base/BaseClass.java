@@ -6,17 +6,19 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class BaseClass {
-	
+	ChromeOptions options = new ChromeOptions();
 	WebDriver driver;
 	public void launchChromeBrowser()
 	{
-		driver = new ChromeDriver();
+		options.addArguments("--ignore-certificate-errors");
+		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		
 		try {
-			driver.get("https://demo.opencart.com");
+			driver.get("http://opencart.abstracta.us/");
 			driver.manage().timeouts().implicitlyWait (Duration.ofSeconds(3));
 			
 		}catch(Exception e){

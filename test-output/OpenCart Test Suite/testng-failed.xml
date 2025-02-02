@@ -7,8 +7,6 @@
         <methods>
           <include name="setUp"/>
           <include name="testUserRegistration"/>
-          <include name="testAddToCart"/>
-          <include name="testProductSearch"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- pages.OpenCartTest -->

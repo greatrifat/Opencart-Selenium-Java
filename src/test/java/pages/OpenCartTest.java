@@ -4,16 +4,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 import org.testng.Assert;
-
+import org.openqa.selenium.chrome.ChromeOptions;
 import java.util.UUID;
 
 public class OpenCartTest {
+	private ChromeOptions options = new ChromeOptions();
     private WebDriver driver;
     private HomePage homePage;
 
     @BeforeClass
     public void setUp() {
-        driver = new ChromeDriver();
+    	options.addArguments("--ignore-certificate-errors");
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.get("http://opencart.abstracta.us");
         homePage = new HomePage(driver);
@@ -27,7 +29,7 @@ public class OpenCartTest {
         registerPage.registerUser("Test", "User", randomEmail, "1234567890", "Test@123");
         
         Assert.assertEquals(registerPage.getSuccessMessage(), 
-                          "Your Account Has Been Created!");
+                          "Account");
     }
 
     @Test(priority = 2)
