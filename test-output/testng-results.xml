@@ -1,33 +1,220 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="0" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-03T02:22:25 BDT" name="OpenCart Test Suite" finished-at="2025-02-03T02:22:47 BDT" duration-ms="21333">
+  <suite started-at="2025-02-04T21:53:17 BDT" name="Default suite" finished-at="2025-02-04T21:54:11 BDT" duration-ms="53319">
     <groups>
     </groups>
-    <test started-at="2025-02-03T02:22:25 BDT" name="OpenCart Tests" finished-at="2025-02-03T02:22:47 BDT" duration-ms="21333">
-      <class name="pages.OpenCartTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:pages.OpenCartTest@222545dc]" started-at="2025-02-03T02:22:25 BDT" name="setUp" finished-at="2025-02-03T02:22:39 BDT" duration-ms="13337" status="PASS">
+    <test started-at="2025-02-04T21:53:17 BDT" name="Default test" finished-at="2025-02-04T21:54:11 BDT" duration-ms="53319">
+      <class name="tests.ShoppingCartTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.ShoppingCartTest@323b36e0]" started-at="2025-02-04T21:53:17 BDT" name="setUp" finished-at="2025-02-04T21:53:45 BDT" duration-ms="27191" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testUserRegistration()[pri:1, instance:pages.OpenCartTest@222545dc]" started-at="2025-02-03T02:22:39 BDT" name="testUserRegistration" finished-at="2025-02-03T02:22:43 BDT" duration-ms="4822" status="PASS">
+        <test-method is-config="true" signature="addProductToCart()[pri:0, instance:tests.ShoppingCartTest@323b36e0]" started-at="2025-02-04T21:53:45 BDT" name="addProductToCart" finished-at="2025-02-04T21:53:47 BDT" duration-ms="2310" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testUserRegistration -->
-        <test-method signature="testProductSearch()[pri:2, instance:pages.OpenCartTest@222545dc]" started-at="2025-02-03T02:22:43 BDT" name="testProductSearch" finished-at="2025-02-03T02:22:44 BDT" duration-ms="919" status="PASS">
+        </test-method> <!-- addProductToCart -->
+        <test-method signature="testUpdateCartQuantity()[pri:1, instance:tests.ShoppingCartTest@323b36e0]" started-at="2025-02-04T21:53:47 BDT" name="testUpdateCartQuantity" finished-at="2025-02-04T21:53:47 BDT" duration-ms="64" status="FAIL">
+          <exception class="java.lang.IndexOutOfBoundsException">
+            <message>
+              <![CDATA[Index 0 out of bounds for length 0]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+at java.base/java.util.Objects.checkIndex(Objects.java:385)
+at java.base/java.util.ArrayList.get(ArrayList.java:427)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+at jdk.proxy2/jdk.proxy2.$Proxy16.get(Unknown Source)
+at pages.CartPage.updateQuantity(CartPage.java:43)
+at tests.ShoppingCartTest.testUpdateCartQuantity(ShoppingCartTest.java:51)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IndexOutOfBoundsException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testProductSearch -->
-        <test-method signature="testAddToCart()[pri:3, instance:pages.OpenCartTest@222545dc]" started-at="2025-02-03T02:22:44 BDT" name="testAddToCart" finished-at="2025-02-03T02:22:46 BDT" duration-ms="1929" status="PASS">
+        </test-method> <!-- testUpdateCartQuantity -->
+        <test-method is-config="true" signature="navigateHome()[pri:0, instance:tests.ShoppingCartTest@323b36e0]" started-at="2025-02-04T21:53:47 BDT" name="navigateHome" finished-at="2025-02-04T21:53:48 BDT" duration-ms="979" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testAddToCart -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:pages.OpenCartTest@222545dc]" started-at="2025-02-03T02:22:46 BDT" name="tearDown" finished-at="2025-02-03T02:22:47 BDT" duration-ms="271" status="PASS">
+        </test-method> <!-- navigateHome -->
+        <test-method is-config="true" signature="addProductToCart()[pri:0, instance:tests.ShoppingCartTest@323b36e0]" started-at="2025-02-04T21:53:48 BDT" name="addProductToCart" finished-at="2025-02-04T21:53:50 BDT" duration-ms="2309" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addProductToCart -->
+        <test-method signature="testRemoveItemFromCart()[pri:2, instance:tests.ShoppingCartTest@323b36e0]" started-at="2025-02-04T21:53:50 BDT" name="testRemoveItemFromCart" finished-at="2025-02-04T21:53:50 BDT" duration-ms="48" status="FAIL">
+          <exception class="java.lang.IndexOutOfBoundsException">
+            <message>
+              <![CDATA[Index 0 out of bounds for length 0]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+at java.base/java.util.Objects.checkIndex(Objects.java:385)
+at java.base/java.util.ArrayList.get(ArrayList.java:427)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+at jdk.proxy2/jdk.proxy2.$Proxy16.get(Unknown Source)
+at pages.CartPage.removeItem(CartPage.java:50)
+at tests.ShoppingCartTest.testRemoveItemFromCart(ShoppingCartTest.java:63)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IndexOutOfBoundsException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRemoveItemFromCart -->
+        <test-method is-config="true" signature="navigateHome()[pri:0, instance:tests.ShoppingCartTest@323b36e0]" started-at="2025-02-04T21:53:50 BDT" name="navigateHome" finished-at="2025-02-04T21:53:51 BDT" duration-ms="687" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateHome -->
+        <test-method is-config="true" signature="addProductToCart()[pri:0, instance:tests.ShoppingCartTest@323b36e0]" started-at="2025-02-04T21:53:51 BDT" name="addProductToCart" finished-at="2025-02-04T21:53:53 BDT" duration-ms="2182" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addProductToCart -->
+        <test-method signature="testCompleteCheckoutProcess()[pri:3, instance:tests.ShoppingCartTest@323b36e0]" started-at="2025-02-04T21:53:53 BDT" name="testCompleteCheckoutProcess" finished-at="2025-02-04T21:54:09 BDT" duration-ms="16046" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.id: input-email' (tried for 10 second(s) with 500 milliseconds interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.id: input-email' (tried for 10 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at pages.BasePage.waitForElementToBeVisible(BasePage.java:25)
+at pages.CheckoutPage.loginDuringCheckout(CheckoutPage.java:43)
+at tests.ShoppingCartTest.testCompleteCheckoutProcess(ShoppingCartTest.java:73)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#input\-email"}
+  (Session info: chrome=132.0.6834.160)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [05c27cdb46098a13350ecf5e3573fe37, findElement {using=id, value=input-email}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.160, chrome: {chromedriverVersion: 132.0.6834.159 (2d77d3fc445..., userDataDir: C:\Users\MD2CC8~1.ROB\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55386}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55386/devtoo..., se:cdpVersion: 132.0.6834.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 05c27cdb46098a13350ecf5e3573fe37
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy15.isDisplayed(Unknown Source)
+at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+... 29 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCompleteCheckoutProcess -->
+        <test-method is-config="true" signature="navigateHome()[pri:0, instance:tests.ShoppingCartTest@323b36e0]" started-at="2025-02-04T21:54:09 BDT" name="navigateHome" finished-at="2025-02-04T21:54:10 BDT" duration-ms="949" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateHome -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.ShoppingCartTest@323b36e0]" started-at="2025-02-04T21:54:10 BDT" name="tearDown" finished-at="2025-02-04T21:54:11 BDT" duration-ms="445" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- pages.OpenCartTest -->
-    </test> <!-- OpenCart Tests -->
-  </suite> <!-- OpenCart Test Suite -->
+      </class> <!-- tests.ShoppingCartTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

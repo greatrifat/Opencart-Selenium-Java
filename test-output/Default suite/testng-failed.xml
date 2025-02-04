@@ -3,15 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="pages.OpenCartTest">
+      <class name="tests.ShoppingCartTest">
         <methods>
           <include name="setUp"/>
-          <include name="testUserRegistration"/>
-          <include name="testAddToCart"/>
-          <include name="testProductSearch"/>
+          <include name="testRemoveItemFromCart"/>
+          <include name="testUpdateCartQuantity"/>
+          <include name="addProductToCart"/>
           <include name="tearDown"/>
+          <include name="navigateHome"/>
+          <include name="testCompleteCheckoutProcess"/>
         </methods>
-      </class> <!-- pages.OpenCartTest -->
+      </class> <!-- tests.ShoppingCartTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
